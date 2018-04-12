@@ -43,9 +43,10 @@ class ProductController extends Controller
     public function edit($id)
     {
     	$product = Product::find($id);
-    	return view('prod
+        $categories = DB::table('categories')
+            ->get();
 
-            uct.edit', ['product' => $product]);
+    	return view('product.edit', ['product' => $product, 'categories' => $categories]);
     }
 
     public function delete($id)

@@ -29,7 +29,13 @@
 			</tr>
 			<tr>
 				<td>CATEGORY:</td>
-				<td><input type="text" name="cat" value="{{$product->categoryId}}"></td>
+				<td>
+					<select name="cat">
+						@foreach($categories as $cat)
+							<option value="{{$cat->categoryId}}">{{$cat->categoryName}}</option>
+						@endforeach
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td></td>
