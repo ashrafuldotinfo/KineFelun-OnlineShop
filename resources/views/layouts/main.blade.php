@@ -10,7 +10,7 @@
 	@yield('styles')
 </head>
 <body>
-	<h2>My Application</h2>
+	
 	@yield('header')
 	@yield('menubar')
 
