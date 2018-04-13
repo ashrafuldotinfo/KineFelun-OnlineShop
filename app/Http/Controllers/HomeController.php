@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -12,6 +13,12 @@ class HomeController extends Controller
     }
     public function index(Request $request)
     {
-    	return view('home.index');
+    	$products = DB::table('products')
+    		->get();
+
+		$categories = DB::table('categories')
+			->get();
+
+    	return view('home.index', ['products' => $products, 'categories' => $categories]);
     }
 }
