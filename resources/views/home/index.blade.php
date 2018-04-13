@@ -42,11 +42,12 @@
                 </li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0" method="post" action="/home/search">
+            	{{csrf_field()}}
                 <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
+                    <input type="text" name="searchText" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
                     <div class="input-group-append">
-                        <button type="button" class="btn btn-secondary btn-number">
+                        <button type="submit" class="btn btn-secondary btn-number">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -54,6 +55,9 @@
                 <a class="btn btn-success btn-sm ml-3" href="cart.html">
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">3</span>
+                </a>
+                <a class="btn btn-danger btn-sm ml-3" href="/logout">
+                    <i class="fa fa-sign-out"></i> Logout
                 </a>
             </form>
         </div>
