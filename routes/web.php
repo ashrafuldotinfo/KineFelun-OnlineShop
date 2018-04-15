@@ -39,6 +39,9 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::post('/product/search', 'ProductController@search');
 	Route::put('/product/{id}', 'ProductController@update');
 	Route::delete('/product/{id}', 'ProductController@destroy');
+
+	Route::get('/cart', 'CartController@index');
+	Route::get('/cart/{id}', 'CartController@index');
 });
 
 Route::get('/login', 'LoginController@index');

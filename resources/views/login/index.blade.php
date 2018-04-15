@@ -5,6 +5,7 @@
 	<div class="container" background="">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
+                <h1>Welcome</h1>
 				<div class="panel panel-info">
         <div class="panel-heading">Sign In</div>
         <div class="panel-body">
@@ -22,7 +23,14 @@
                 
                 <div class="clearfix"></div>
             </form>
-            <!-- <br/><div class="alert alert-error"><strong>Just a quick note:</strong> Hope you like the theme!</div> -->
+            <br/>
+            <div class="alert alert-danger">
+                <strong>
+                    @if(session('message'))
+                        <label>{{session('message')}}</label>
+                    @endif
+                </strong>
+            </div>
             
         </div>
 
@@ -36,9 +44,7 @@
 
 
 
-	@if(session('message'))
-		<label>{{session('message')}}</label>
-	@endif
+	
 @endsection
 
 @section('pagetitle')
