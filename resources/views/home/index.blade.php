@@ -89,7 +89,7 @@
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
                 <ul class="list-group category_block">
                     @foreach($categories as $category)
-                    	<li class="list-group-item"><a href="category.html">{{$category->categoryName}}</a></li>
+                    	<li class="list-group-item"><a href="home/category/{{$category->categoryId}}">{{$category->categoryName}}</a></li>
                     @endforeach
                 </ul>
             </div>

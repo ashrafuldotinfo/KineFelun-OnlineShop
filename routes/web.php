@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['sess']], function(){
 	Route::get('/home', 'HomeController@index')->name('home.index');
 	Route::post('/home/search', 'HomeController@search');
+	Route::get('/home/category/{id}', 'HomeController@showByCategory');
 
 	Route::get('/category', 'CategoryController@index');
 	Route::get('/category/create', 'CategoryController@create');

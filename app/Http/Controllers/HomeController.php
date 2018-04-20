@@ -34,4 +34,15 @@ class HomeController extends Controller
 
 		return view('home.index', ['products' => $products, 'categories' => $categories]);
     }
+
+    public function showByCategory($id)
+    {
+        $products = DB::table('products')
+                    ->where('categoryId', $id)
+                    ->get();
+        $categories = DB::table('categories')
+            ->get();
+
+        return view('home.index', ['products' => $products, 'categories' => $categories]);
+    }
 }
