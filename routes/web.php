@@ -41,11 +41,14 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::delete('/product/{id}', 'ProductController@destroy');
 
 	Route::get('/cart', 'CartController@index');
-	Route::get('/cart/{id}', 'CartController@index');
+	Route::get('/cart/{id}', 'CartController@add');
 });
 
-Route::get('/login', 'LoginController@index');
+Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@verify');
+
+Route::get('/registration', 'RegistrationController@index')->name('registration.index');
+Route::post('/registration', 'RegistrationController@store');
 
 Route::get('/logout', 'LogoutController@index');
 

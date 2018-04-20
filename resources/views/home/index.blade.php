@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="{{route('home.index')}}">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/category">Categories <span class="sr-only">(current)</span></a>
