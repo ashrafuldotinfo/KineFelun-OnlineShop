@@ -118,7 +118,7 @@
                                     <p class="btn btn-danger btn-block">{{number_format($product->price, 2, '.', ',')}} $</p>
                                 </div>
                                 <div class="col">
-                                    <a href="/cart/{{$product->productId}}" class="btn btn-success btn-block">Add to cart</a>
+                                    <a href="/home/product/{{$product->productId}}" class="btn btn-success btn-block">Add to cart</a>
                                 </div>
                             </div>
                         </div>

@@ -45,4 +45,12 @@ class HomeController extends Controller
 
         return view('home.index', ['products' => $products, 'categories' => $categories]);
     }
+
+    public function showProduct($id)
+    {
+        $product = DB::table('products')
+                    ->where('productId', $id)
+                    ->first();
+        return view('home.product', ['product' => $product]);
+    }
 }
