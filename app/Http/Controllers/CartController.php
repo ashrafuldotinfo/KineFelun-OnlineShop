@@ -6,19 +6,33 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Cart;
+
 class CartController extends Controller
 {
     public function index()
     {
-    	return view('cart.index');
+        $cartProducts=Cart::Content();
+        return view('cart.index',['cartProducts'=> $cartProducts]);
+ 
     }
 
-    public function add($id)
+    public function add(Request $request)
     {
-    	// add product to cart from url id
-    	// create a cart session
-    	// when product added to db destroy cart session
-    	
-    	return view('cart.index');
+        $productId=$request->proid;
+         //return $request->quantity;
+        
+        $productDetails=DB::table('products')
+            ->where('productId',$productId)
+            ->first();
+        Cart::Add([
+            'id'=>$productId,
+            'name'=>$productDetails->productName,
+            'price'=>$productDetails->price,
+            'qty'=>$request->quantity
+        ]);
+
+      // return Cart::Content();
+         return redirect('/cart');
     }
 }

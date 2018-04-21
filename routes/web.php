@@ -42,8 +42,10 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::put('/product/{id}', 'ProductController@update');
 	Route::delete('/product/{id}', 'ProductController@destroy');
 
+	//Route::post('/cart', 'CartController@index');
 	Route::get('/cart', 'CartController@index');
-	Route::get('/cart/{id}', 'CartController@add');
+	Route::post('/cart', 'CartController@add');
+//	Route::post('/cart/{id}', 'CartController@add');
 });
 
 Route::get('/login', 'LoginController@index')->name('login.index');
