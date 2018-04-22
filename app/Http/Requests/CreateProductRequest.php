@@ -26,7 +26,8 @@ class CreateProductRequest extends FormRequest
         return [
             'pname' => 'required|max:100',
             'price' => 'required|numeric|min:0',
-            'quantity' => 'required|numeric|min:1'
+            'quantity' => 'required|numeric|min:1',
+            'description' => 'required',
         ];
     }
 
@@ -34,7 +35,8 @@ class CreateProductRequest extends FormRequest
     {
         return [
             'pname.required' => 'Product name is required',
-            'price.required' => 'You must enter a price'
+            'price.required' => 'You must enter a price',
+            'description.required' => 'You must specify Product information',
         ];
     }
 }

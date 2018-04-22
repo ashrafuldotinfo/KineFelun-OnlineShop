@@ -112,7 +112,7 @@
                         <img class="card-img-top" src="https://static.acer.com/up/Resource/Acer/Home/Product_Highlights/20180112/swift_5.png" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title"><a href="product.html" title="View Product">{{$product->productName}}</a></h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">{{$product->description}}</p>
                             <div class="row">
                                 <div class="col">
                                     <p class="btn btn-danger btn-block">{{number_format($product->price, 2, '.', ',')}} $</p>

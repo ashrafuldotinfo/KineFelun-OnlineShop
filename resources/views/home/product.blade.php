@@ -95,7 +95,7 @@
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-align-justify"></i> Description</div>
                 <div class="card-body">
                     <p class="card-text">
-                       product details.............
+                       {{$product->description}}
                     </p>
                    
                 </div>
