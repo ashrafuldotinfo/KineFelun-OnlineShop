@@ -78,7 +78,7 @@
                           
                             <td><input class="form-control" type="text" value="{{$cp->qty}}" /></td>
                             <td class="text-right">{{$cp->subtotal}} €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                            <td class="text-right"><a href="{{ url('/delete-cart/'.$cp->rowId)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         </tr>
                         <?php 
                             $total=$total+($cp->subtotal);
