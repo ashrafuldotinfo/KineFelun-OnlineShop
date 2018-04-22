@@ -5,7 +5,6 @@
 </head>
 <body>
 	<h2>My Application</h2>
-	<p>Welcome {{session('user')->username}}</p>
 	<a href="/category">Categories</a> | 
 	<a href="/product">Products</a> | 
 	<a href="/logout">Logout</a>
@@ -14,6 +13,10 @@
  -->
 
 @extends('layouts.home')
+
+@section('pagetitle')
+    Kine Felun | Home
+@endsection
 
 @section('content')
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -40,6 +43,33 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+                @if(session('user'))
+                    @if(session('user')->type=='admin')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.index')}}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                    @else
+                    @endif
+                    @if(session('user')->type=='user')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('cart.index')}}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                    @else
+                    @endif
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('login.index')}}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('registration.index')}}">Register</a>
+                    </li>
+                @endif
             </ul>
 
             <form class="form-inline my-2 my-lg-0" method="post" action="/home/search">
@@ -56,9 +86,12 @@
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">3</span>
                 </a>
-                <a class="btn btn-danger btn-sm ml-3" href="/logout">
-                    <i class="fa fa-sign-out"></i> Logout
-                </a>
+                <!-- @if(session('user'))
+                    <a class="btn btn-danger btn-sm ml-3" href="/logout">
+                        <i class="fa fa-sign-out"></i> Logout
+                    </a>
+                @else
+                @endif -->
             </form>
         </div>
     </div>

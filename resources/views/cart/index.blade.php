@@ -1,5 +1,9 @@
 
-@extends('layouts.cart');
+@extends('layouts.home');
+
+@section('pagetitle')
+    Kine Felun | Add to Cart
+@endsection
 
 @section('content')
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -11,8 +15,8 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav m-auto">
-                <li class="nav-item m-auto">
-                    <a class="nav-link" href="/home">Home</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('home.index')}}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/category">Categories</a>
@@ -26,9 +30,36 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
+                @if(session('user'))
+                    @if(session('user')->type=='admin')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.index')}}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                    @else
+                    @endif
+                    @if(session('user')->type=='user')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('cart.index')}}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                    @else
+                    @endif
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('login.index')}}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('registration.index')}}">Register</a>
+                    </li>
+                @endif
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
+            <!-- <form class="form-inline my-2 my-lg-0">
                 <div class="input-group input-group-sm">
                     <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search...">
                     <div class="input-group-append">
@@ -41,7 +72,7 @@
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">3</span>
                 </a>
-            </form>
+            </form> -->
         </div>
     </div>
 </nav>

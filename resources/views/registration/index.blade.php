@@ -1,7 +1,7 @@
 @extends('layouts.registration')
 
 @section('title')
-    Registration | Kine Felun
+    Kine Felun | Registration
 @endsection
 
 @section('content')
@@ -100,6 +100,10 @@
                 <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Register</button>
                 <br />
                 <label>Already have an account? <a href="{{route('login.index')}}">Login</a></label>
+                <div>
+                    Back to 
+                    <a style="text-decoration: none;" href="{{route('home.index')}}"><i class="glyphicon glyphicon-home"><strong> HOME</strong></i></a>
+                </div>
             </div>
         </div>
     </form>

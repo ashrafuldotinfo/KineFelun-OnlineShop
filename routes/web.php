@@ -20,11 +20,6 @@ Route::group(['middleware' => ['sess']], function(){
 
 	Route::get('/admin', 'AdminController@index')->name('admin.index');
 
-	Route::get('/home', 'HomeController@index')->name('home.index');
-	Route::post('/home/search', 'HomeController@search')->name('home.search');
-	Route::get('/home/product/{id}', 'HomeController@showProduct')->name('home.product');
-	Route::get('/home/category/{id}', 'HomeController@showByCategory')->name('home.category');
-
 	Route::get('/category', 'CategoryController@index');
 	Route::get('/category/create', 'CategoryController@create');
 	Route::get('/category/{id}', 'CategoryController@show')->name('category.show');
@@ -44,12 +39,18 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::post('/product/search', 'ProductController@search');
 	Route::put('/product/{id}', 'ProductController@update');
 	Route::delete('/product/{id}', 'ProductController@destroy');
-
-	//Route::post('/cart', 'CartController@index');
-	Route::get('/cart', 'CartController@index');
-	Route::post('/cart', 'CartController@add');
-//	Route::post('/cart/{id}', 'CartController@add');
 });
+
+Route::get('/home', 'HomeController@index')->name('home.index');
+Route::post('/home/search', 'HomeController@search')->name('home.search');
+Route::get('/home/product/{id}', 'HomeController@showProduct')->name('home.product');
+Route::get('/home/category/{id}', 'HomeController@showByCategory')->name('home.category');
+
+//Route::post('/cart', 'CartController@index');
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::post('/cart', 'CartController@add');
+Route::get('/delete-cart/{rowId}', 'CartController@remove');
+//	Route::post('/cart/{id}', 'CartController@add');
 
 Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@verify');

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('pagetitle')
-    Login | Kine Felun
+    Kine Felun | Portal
 @endsection
 
 @section('content')
@@ -45,9 +45,13 @@
                             {{session('message')}}
                         @endslot
                     @endcomponent
+                    <div>
+                        <a style="text-decoration: none;" href="{{route('home.index')}}"><i class="glyphicon glyphicon-home"><strong> HOME</strong></i></a>
+                    </div>
                 </div>
             </div>
 		</div>
 	</div>
 </div>
+
 @endsection

@@ -7,7 +7,7 @@
 @section('content')
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Simple Ecommerce</a>
+        <a class="navbar-brand" href="{{route('home.index')}}">Kine Felun</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,9 +29,36 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">Contact</a>
                 </li>
+                @if(session('user'))
+                    @if(session('user')->type=='admin')
+                        <li class="nav-item">
+                        	<a class="nav-link" href="{{route('admin.index')}}">Profile</a>
+                    	</li>
+                    	<li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                    @else
+                    @endif
+                    @if(session('user')->type=='user')
+                        <li class="nav-item">
+                        	<a class="nav-link" href="{{route('cart.index')}}">Profile</a>
+                    	</li>
+                    	<li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                    @else
+                    @endif
+                @else
+                	<li class="nav-item">
+                    	<a class="nav-link" href="{{route('login.index')}}">Login</a>
+                	</li>
+                	<li class="nav-item">
+                        <a class="nav-link" href="{{route('registration.index')}}">Register</a>
+                    </li>
+                @endif
             </ul>
 
-            <form class="form-inline my-2 my-lg-0">
+            <!-- <form class="form-inline my-2 my-lg-0">
                 <div class="input-group input-group-sm">
                     <input type="text" class="form-control" placeholder="Search...">
                     <div class="input-group-append">
@@ -44,7 +71,7 @@
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">3</span>
                 </a>
-            </form>
+            </form> -->
 
         </div>
     </div>
