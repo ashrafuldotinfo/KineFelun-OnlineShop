@@ -35,4 +35,12 @@ class CartController extends Controller
       // return Cart::Content();
          return redirect('/cart');
     }
+
+
+     public function remove($rowId)
+    {
+       Cart::remove($rowId);
+      // return Cart::Content();
+         return redirect('/cart');
+    }
 }
