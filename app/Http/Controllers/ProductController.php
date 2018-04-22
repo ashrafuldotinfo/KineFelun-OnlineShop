@@ -60,7 +60,8 @@ class ProductController extends Controller
     	$p = new Product();
     	$p->productName = $request->pname;
     	$p->price = $request->price;
-    	$p->quantity = $request->quantity;
+        $p->quantity = $request->quantity;
+    	$p->description = $request->description;
     	$p->categoryId = $request->cat;
     	
         $p->save();

@@ -18,6 +18,7 @@ class CreateProductTable extends Migration
             $table->string('productName');
             $table->string('price');
             $table->string('quantity');
+            $table->string('description', 500);
             $table->string('categoryId');
         });
     }

@@ -81,7 +81,7 @@
                             <td class="text-right"><a href="{{ url('/delete-cart/'.$cp->rowId)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         </tr>
                         <?php 
-                            $total=$total+($cp->subtotal);
+                            $total=$total+($cp->subtotal*$cp->qty);
                          ?>
                          @endforeach 
                         

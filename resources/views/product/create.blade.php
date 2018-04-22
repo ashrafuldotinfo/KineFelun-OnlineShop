@@ -24,6 +24,10 @@
 				<td><input type="text" name="quantity" value="{{old('quantity')}}"></td>
 			</tr>
 			<tr>
+				<td>Description:</td>
+				<td><textarea name="description" value="{{old('description')}}" row="4" cols="17"></textarea></td>
+			</tr>
+			<tr>
 				<td>CATEGORY:</td>
 				<td>
 					<select name="cat">

@@ -21,6 +21,7 @@
 			<th>PRICE</th>
 			<th>QUANTITY</th>
 			<th>CATEGORY</th>
+			<th>Description</th>
 			<th>OPTION</th>
 		</tr>
 		@foreach($products as $product)
@@ -30,6 +31,7 @@
 				<td>{{$product->price}}</td>
 				<td>{{$product->quantity}}</td>
 				<td>{{$product->category->categoryName}}</td>
+				<td>{{$product->description}}</td>
 				<td>
 					<a href="/product/{{$product->productId}}">Details</a> | 
 					<a href="/product/{{$product->productId}}/edit">Edit</a> | 
