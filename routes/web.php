@@ -17,6 +17,9 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['sess']], function(){
+
+	Route::get('/admin', 'AdminController@index')->name('admin.index');
+
 	Route::get('/home', 'HomeController@index')->name('home.index');
 	Route::post('/home/search', 'HomeController@search')->name('home.search');
 	Route::get('/home/product/{id}', 'HomeController@showProduct')->name('home.product');

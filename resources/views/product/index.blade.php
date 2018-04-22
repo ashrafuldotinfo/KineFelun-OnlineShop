@@ -68,8 +68,8 @@
 	                    @foreach($products as $product)
 	                          <tr>
 	                            <td align="center">
-	                              <a class="btn btn-default" href="/product/{{$product->productId}}"><em class="fa fa-info"></em></a>
-	                              <a class="btn btn-default" href="/product/{{$product->productId}}/edit"><em class="fa fa-pencil"></em></a>
+	                              <a class="btn btn-info" href="/product/{{$product->productId}}"><em class="fa fa-info"></em></a>
+	                              <a class="btn btn-warning" href="/product/{{$product->productId}}/edit"><em class="fa fa-pencil"></em></a>
 	                              <a class="btn btn-danger" href="/product/{{$product->productId}}/delete"><em class="fa fa-trash"></em></a>
 	                            </td>
 	                            <td class="hidden-xs">{{$product->productId}}</td>

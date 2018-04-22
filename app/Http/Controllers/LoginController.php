@@ -22,12 +22,18 @@ class LoginController extends Controller
             ->where('password', $request->password)
             ->first();
 
-        if($user)
+        if($user->type=='user')
     	{
     		$request->session()->put('user', $user);
     		// session('user', $user);
             return redirect()->route('home.index');
     	}
+        if($user->type=='admin')
+        {
+            $request->session()->put('user', $user);
+            // session('user', $user);
+            return redirect()->route('admin.index');
+        }
     	else
     	{
             $request->session()->flash('message', 'Invalid username or password');

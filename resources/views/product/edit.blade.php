@@ -25,7 +25,7 @@
                             <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg">
                             Admin
                         </h3>
-                        <h4>Edit product</h4>
+                        <h4>Update product</h4>
                     </div>
                     <div class="panel-body"> 
                         <div class="table-responsive">
