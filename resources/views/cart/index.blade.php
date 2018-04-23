@@ -1,5 +1,5 @@
 
-@extends('layouts.home');
+@extends('layouts.home')
 
 @section('pagetitle')
     Kine Felun | Add to Cart
@@ -67,18 +67,19 @@
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <a class="btn btn-success btn-sm ml-3" href="cart.html">
                     <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">3</span>
+                    <span class="badge badge-light">{{$cartProducts->count()}}</span>
                 </a>
-            </form> -->
+            <!-- </form> -->
         </div>
     </div>
 </nav>
 <section class="jumbotron text-center">
     <div class="container">
         <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
+
      </div>
 </section>
 
@@ -141,6 +142,11 @@
     </div>
 </div>
 
+
+@endsection
+
+@section('footer')
+
 <!-- Footer -->
 <footer class="text-light">
     <div class="container">
@@ -194,7 +200,6 @@
         </div>
     </div>
 </footer>
-
 @endsection
 
 
