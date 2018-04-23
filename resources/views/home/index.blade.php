@@ -21,7 +21,7 @@
 @section('content')
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/home">Kine Felun</a>
+        <a class="navbar-brand" href="{{route('home.index')}}">Kine Felun</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,13 +32,13 @@
                     <a class="nav-link" href="{{route('home.index')}}">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/category">Categories <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('category.index')}}">Categories <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/product">Product</a>
+                    <a class="nav-link" href="{{route('product.index')}}">Product</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cart">Cart</a>
+                    <a class="nav-link" href="{{route('cart.index')}}">Cart</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact.html">Contact</a>
@@ -129,10 +129,10 @@
             <div class="card bg-light mb-3">
                 <div class="card-header bg-success text-white text-uppercase">Last product</div>
                 <div class="card-body">
-                    <img class="img-fluid" src="https://dummyimage.com/600x400/55595c/fff" />
-                    <h5 class="card-title">Product title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <p class="bloc_left_price">99.00 $</p>
+                    <img class="img-fluid" src="https://static.acer.com/up/Resource/Acer/Home/Product_Highlights/20180112/swift_5.png" />
+                    <h5 class="card-title">{{$products[0]->productName}}</h5>
+                    <p class="card-text">{{$products[0]->description}}</p>
+                    <p class="bloc_left_price">{{number_format($products[0]->price, 2, '.', ',')}} $</p>
                 </div>
             </div>
         </div>
