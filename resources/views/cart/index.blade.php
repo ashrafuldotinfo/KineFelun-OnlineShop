@@ -70,7 +70,7 @@
                 </div> -->
                 <a class="btn btn-success btn-sm ml-3" href="cart.html">
                     <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">{{$cartProducts->count()}}</span>
+                    <span class="badge badge-light">{{Cart::content()->count()}}</span>
                 </a>
             <!-- </form> -->
         </div>

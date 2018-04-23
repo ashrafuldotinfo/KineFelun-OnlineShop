@@ -1,16 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<h2>My Application</h2>
-	<a href="/category">Categories</a> | 
-	<a href="/product">Products</a> | 
-	<a href="/logout">Logout</a>
-</body>
-</html>
- -->
 
 @extends('layouts.home')
 
@@ -84,7 +71,7 @@
                 </div>
                 <a class="btn btn-success btn-sm ml-3" href="cart.html">
                     <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">3</span>
+                    <span class="badge badge-light">{{Cart::content()->count()}}</span>
                 </a>
                 <!-- @if(session('user'))
                     <a class="btn btn-danger btn-sm ml-3" href="/logout">
