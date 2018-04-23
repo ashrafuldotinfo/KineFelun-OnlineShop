@@ -1,39 +1,98 @@
-@extends('layouts.main')
 
-@section('content')
-	<h2>List of Categories</h2>
-	<a href="{{route('home.index')}}">Back to Home</a> | 
-	<a href="/category/create">Create New</a>
-	<br/><br/>
-	<form method="post" action="/category/search">
-		{{csrf_field()}}
-		<input type="text" name="searchText">
-		<input type="submit" value="Search">
-	</form>
-	<br/>
-	<table border="1">
-		<tr>
-			<th>ID</th>
-			<th>NAME</th>
-			<th>OPTION</th>
-		</tr>
-		@foreach($categories as $cat)
-			<tr>
-				<td>{{$cat->categoryId}}</td>
-				<td>{{$cat->categoryName}}</td>
-				<td>
-					<a href="{{route('category.show', ['id' => $cat->categoryId])}}">Details</a> | 
-					<a href="/category/{{$cat->categoryId}}/edit">Edit</a> | 
-					<a href="/category/{{$cat->categoryId}}/delete">Delete</a>
-				</td>
-			</tr>
-		@endforeach
-	</table>
+
+
+
+@extends('layouts.productlist')
+
+<!-- @section('styles')
+	<style type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	</style>
+@endsection -->
+
+@section('pagetitle')
+	Kine Felun | All category
 @endsection
 
+@section('content')
 
+<div class="container bootstrap snippet">
+    <div class="col-md-12 col-sm-8 content">
+    	<div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                	<li class="active"><a href="/admin">Profile</a></li>
+	                <li><a href="{{route('product.index')}}">Products</a></li>
+	                <li><a href="{{route('category.index')}}">Categories</a></li>
+	                <li class="active">Categories</li>
+                </ol>
+            </div>
+        </div>
+	    <div class="row">    
+	        <div class="col-md-12">
+	            <div class="panel panel-default panel-table">
+	              <div class="panel-heading">
+	                <div class="row">
+	                  <div class="col col-xs-6">
+	                  	<h1>
+	                  		<a style="text-decoration: none;" href="{{route('admin.index')}}">Profile</a> /
+	                  		<a style="text-decoration: none;" href="{{route('home.index')}}">Home</a>
+	                  	</h1>
+	                  </div>
+	                  <div class="col col-xs-6 text-right">
+	                  	<a class="btn btn-sm btn-warning" href="{{route('product.create')}}" style="color: white; text-decoration: none;">Create New Product</a>
+	                    <!-- <button type="button" class="btn btn-sm btn-primary"> --><a class="btn btn-sm btn-primary" href="/category/create" style="color: white; text-decoration: none;">Create New category</a><!-- </button> -->
+	                    <div class="container">
+							<div class="col-md-5">
+							  <form class="navbar-form" role="search" method="post" action="/category/search">
+							  	{{csrf_field()}}
+							    <div class="input-group add-on">
+							      <input class="form-control" placeholder="Search" name="searchText" id="srch-term" type="text">
+							      <div class="input-group-btn">
+							        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+							      </div>
+							    </div>
+							  </form>
+		                  </div>
+		                </div>
 
+	              </div>
+	              <div class="panel-body">
+	                <table class="table table-striped table-bordered table-list">
+	                	<thead>
+		                    <tr>
+		                        <th><em class="fa fa-cog"> Options</em></th>
+		                        <th class="hidden-xs">ID</th>
+		                        <th>category name</th>
+		                    </tr> 
+	                  	</thead>
+		                <tbody>
+		                    @foreach($categories as $category)
+		                          <tr>
+		                            <td align="center">
+		                              <a class="btn btn-info" href="/category/{{$category->categoryId}}"><em class="fa fa-info"></em></a>
+		                              <a class="btn btn-warning" href="/category/{{$category->categoryId}}/edit"><em class="fa fa-pencil"></em></a>
+		                              <a class="btn btn-danger" href="/category/{{$category->categoryId}}/delete"><em class="fa fa-trash"></em></a>
+		                            </td>
+		                            <td class="hidden-xs">{{$category->categoryId}}</td>
+		                            <td>{{$category->categoryName}}</td>
+		                          </tr>
+		                    @endforeach
+		                </tbody>
+	                </table>
+	              </div>
+	              <div class="panel-footer">
+	                <div class="row">
+	                  <div class="col col-xs-4">Number of categories: {{$categories->count()}}
+	                  </div>
+	                    </ul>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+			</div>
+		</div>
+	</div>
+</div>
 
-@section('scripts')
-	<script type="text/javascript" src="myscript.js"></script>
 @endsection

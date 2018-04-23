@@ -20,7 +20,7 @@ Route::group(['middleware' => ['sess']], function(){
 
 	Route::get('/admin', 'AdminController@index')->name('admin.index');
 
-	Route::get('/category', 'CategoryController@index');
+	Route::get('/category', 'CategoryController@index')->name('category.index');
 	Route::get('/category/create', 'CategoryController@create');
 	Route::get('/category/{id}', 'CategoryController@show')->name('category.show');
 	Route::get('/category/{id}/edit', 'CategoryController@edit');
@@ -30,8 +30,8 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::put('/category/{id}', 'CategoryController@update');
 	Route::delete('/category/{id}', 'CategoryController@destroy');
 	
-	Route::get('/product', 'ProductController@index');
-	Route::get('/product/create', 'ProductController@create');
+	Route::get('/product', 'ProductController@index')->name('product.index');
+	Route::get('/product/create', 'ProductController@create')->name('product.create');
 	Route::get('/product/{id}', 'ProductController@show');
 	Route::get('/product/{id}/edit', 'ProductController@edit');
 	Route::get('/product/{id}/delete', 'ProductController@delete');

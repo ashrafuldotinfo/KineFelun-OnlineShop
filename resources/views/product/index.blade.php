@@ -18,7 +18,9 @@
     	<div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                	<li class="active"><a href="/admin">Profile</a></li>
+                	<li class="active"><a href="{{route('admin.index')}}">Profile</a></li>
+	                <li><a href="{{route('product.index')}}">Products</a></li>
+	                <li><a href="{{route('category.index')}}">Categories</a></li>
                   	<li class="active">List of Products</li>
                 </ol>
             </div>
@@ -29,12 +31,14 @@
 	              <div class="panel-heading">
 	                <div class="row">
 	                  <div class="col col-xs-6">
-	                  	<h1><a href="/admin">Profile</a></h1>
-	                  		<a href="{{route('home.index')}}">Back to Home</a>
+	                  	<h1>
+	                  		<a style="text-decoration: none;" href="{{route('admin.index')}}">Profile</a> /
+	                  		<a style="text-decoration: none;" href="{{route('home.index')}}">Home</a>
+	                  	</h1>
 	                  </div>
 	                  <div class="col col-xs-6 text-right">
-	                    <!-- <button type="button" class="btn btn-sm btn-primary"> --><a class="btn btn-sm btn-primary" href="/product/create" style="color: white; text-decoration: none;">Create New</a><!-- </button> -->
-
+	                    <!-- <button type="button" class="btn btn-sm btn-primary"> --><a class="btn btn-sm btn-primary" href="/product/create" style="color: white; text-decoration: none;">Create New Product</a><!-- </button> -->
+	                    <a class="btn btn-sm btn-warning" href="/category" style="color: white; text-decoration: none;">Create New Category</a>
 	                    <div class="container">
 							<div class="col-md-5">
 							  <form class="navbar-form" role="search" method="post" action="/product/search">

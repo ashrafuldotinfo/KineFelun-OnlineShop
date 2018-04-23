@@ -2,7 +2,7 @@
 @extends('layouts.productlist')
 
 @section('pagetitle')
-	Kine Felun | Update product information
+	Kine Felun | Create New Product
 @endsection
 
 @section('content')
@@ -11,9 +11,10 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                	<li class="active"><a href="/admin">Profile</a></li>
-                  <li><a href="/product">Back to list</a></li>
-                  <li class="active">Create new product</li>
+                	<li class="active"><a href="{{route('admin.index')}}">Profile</a></li>
+	                <li><a href="{{route('product.index')}}">Products</a></li>
+	                <li><a href="{{route('category.index')}}">Categories</a></li>
+                  	<li class="active">Create new product</li>
                 </ol>
             </div>
         </div>

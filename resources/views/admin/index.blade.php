@@ -12,8 +12,9 @@
     	<div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                	<li class="active"><a href="/admin">Profile</a></li>
-                  	<li class="active"><a href="/product">List of Products</a></li>
+                	<li class="active"><a href="{{route('admin.index')}}">Profile</a></li>
+	                <li><a href="{{route('product.index')}}">Products</a></li>
+	                <li><a href="{{route('category.index')}}">Categories</a></li>
                 </ol>
             </div>
 	      <div class="col-md-12">
