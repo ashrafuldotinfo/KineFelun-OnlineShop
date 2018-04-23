@@ -12,9 +12,10 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                	<li class="active"><a href="/admin">Profile</a></li>
-                  <li><a href="/product">Back to list</a></li>
-                  <li class="active">Delete product</li>
+                	<li class="active"><a href="{{route('admin.index')}}">Profile</a></li>
+	                <li><a href="{{route('product.index')}}">Products</a></li>
+	                <li><a href="{{route('category.index')}}">Categories</a></li>
+                  	<li class="active">Delete product</li>
                 </ol>
             </div>
         </div>
@@ -26,7 +27,7 @@
                             <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg">
                             Admin
                         </h3>
-                        <h4><a href="/product/{{$product->productId}}/edit">Edit product</a></h4>
+                        <h4>Delete product</h4>
                     </div>
                     <div class="panel-body"> 
                         <div class="table-responsive">
