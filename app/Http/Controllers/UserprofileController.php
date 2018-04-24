@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\User;
 
@@ -12,7 +13,11 @@ class UserprofileController extends Controller
     {
     	if($request->session()->has('user'))
     	{
-    		return view('userprofile.index');
+            $orders = DB::table('orders')
+                    ->where('id', session('user')->id)
+                    ->get();
+
+    		return view('userprofile.index', ['orders' => $orders]);
     			
     	}
     	else

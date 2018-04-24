@@ -69,7 +69,7 @@
                         </button>
                     </div>
                 </div>
-                <a class="btn btn-success btn-sm ml-3" href="cart.html">
+                <a class="btn btn-success btn-sm ml-3" href="{{route('cart.index')}}">
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">{{Cart::content()->count()}}</span>
                 </a>
@@ -119,7 +119,7 @@
                     <img class="img-fluid" src="https://static.acer.com/up/Resource/Acer/Home/Product_Highlights/20180112/swift_5.png" />
                     <h5 class="card-title">{{$products[0]->productName}}</h5>
                     <p class="card-text">{{$products[0]->description}}</p>
-                    <p class="bloc_left_price">{{number_format($products[0]->price, 2, '.', ',')}} $</p>
+                    <p class="bloc_left_price">$ {{number_format($products[0]->price, 2, '.', ',')}}</p>
                 </div>
             </div>
         </div>

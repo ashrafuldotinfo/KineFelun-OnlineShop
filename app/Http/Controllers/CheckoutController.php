@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Cart;
 use App\Checkout;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        //
+        $cartProducts = Cart::Content();
+        return view('checkout.index', ['cartProducts' => $cartProducts]);
     }
 
     /**
@@ -36,7 +38,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

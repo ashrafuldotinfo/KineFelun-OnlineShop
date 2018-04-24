@@ -45,10 +45,12 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::put('/profile/{id}','UserprofileController@update')->name('userprofile.update');
 	
 	Route::get('/order','OrderController@index')->name('order.index');
-
 	Route::get('/order/{id}','OrderController@show')->name('order.show');
 
 	//Route::get('/order/create','OrderController@create')->name('order.create');
+
+	Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+	Route::post('/checkout/store', 'CheckoutController@thanks')->name('checkout.thanks');
 });
 
 Route::get('/home', 'HomeController@index')->name('home.index');

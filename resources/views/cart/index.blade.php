@@ -109,7 +109,7 @@
                             <td>{{$cp->name}}</td>
                           
                             <td><input class="form-control" type="text" value="{{$cp->qty}}" /></td>
-                            <td class="text-right">{{$cp->subtotal}} €</td>
+                            <td class="text-right">$ {{$cp->subtotal}}</td>
                             <td class="text-right"><a href="{{ url('/delete-cart/'.$cp->rowId)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         </tr>
                         <?php 
@@ -132,10 +132,10 @@
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                    <a class="btn btn-block btn-light" href="{{route('home.index')}}"> Continue Shopping </a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                    <a class="btn btn-lg btn-block btn-success text-uppercase" href="{{route('checkout.index')}}">Checkout</a>
                 </div>
             </div>
         </div>
