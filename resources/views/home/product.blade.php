@@ -137,7 +137,7 @@
                                     </button>
                                 </div>
                                  <input type="hidden" id="proid" value="{{$product->productId}}" name="proid">
-                                <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
+                                <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1" readonly>
                                 <div class="input-group-append">
                                     <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
                                         <i class="fa fa-plus"></i>

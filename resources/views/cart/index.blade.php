@@ -68,7 +68,7 @@
                         </button>
                     </div>
                 </div> -->
-                <a class="btn btn-success btn-sm ml-3" href="cart.html">
+                <a class="btn btn-success btn-sm ml-3" href="{{route('cart.index')}}">
                     <i class="fa fa-shopping-cart"></i> Cart
                     <span class="badge badge-light">{{Cart::content()->count()}}</span>
                 </a>

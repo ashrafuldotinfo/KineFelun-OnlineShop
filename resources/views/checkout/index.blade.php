@@ -14,7 +14,7 @@
                     <a href="{{route('home.index')}}" class="btn btn-info" style="width: 100%;">Add More Products and Services</a>
                     <hr/>
                     <div class="shopping_cart">
-                        <form class="form-horizontal" method="post" action="/checkout/thanks" role="form" id="payment-form">
+                        <form class="form-horizontal" method="post" role="form" id="payment-form">
 
                         	{{csrf_field()}}
 

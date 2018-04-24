@@ -50,7 +50,7 @@ Route::group(['middleware' => ['sess']], function(){
 	//Route::get('/order/create','OrderController@create')->name('order.create');
 
 	Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
-	Route::post('/checkout/store', 'CheckoutController@thanks')->name('checkout.thanks');
+	Route::post('/checkout', 'CheckoutController@store')->name('checkout.thanks');
 });
 
 Route::get('/home', 'HomeController@index')->name('home.index');

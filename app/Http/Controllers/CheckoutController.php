@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Cart;
 use App\Checkout;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class CheckoutController extends Controller
@@ -38,7 +39,36 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        
+        if(Cart::Content()->count()!=null){
+        $orderId = DB::table('orders')
+            ->insertGetId(['id'=> session('user')->id]);
+
+        $cartProducts = Cart::content();
+
+        foreach($cartProducts as $cp)
+        {
+            $params=[
+                'productId'=>$cp->id,
+                // 'productname'=>$cp->name,
+                'orderId'=>$orderId,
+                // 'username'=>$request->name,
+                'qn'=>$cp->qty
+                // 'price'=>$cp->subtotal,
+                // 'phonenumber'=>$request->phone_number,
+                // 'address'=>$request->address,
+                // 'zipcode'=>$request->zip_code
+            ];
+            DB::table('checkouts')
+                ->insert($params);
+
+            Cart::remove($cp->rowId);
+        }
+
+        return view('checkout.thanks');
+    }else{
+        $cartProducts = Cart::content();
+        return view('cart.index', ['cartProducts'=>$cartProducts]);
+    }
     }
 
     /**
