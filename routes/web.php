@@ -39,6 +39,16 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::post('/product/search', 'ProductController@search');
 	Route::put('/product/{id}', 'ProductController@update');
 	Route::delete('/product/{id}', 'ProductController@destroy');
+
+	Route::get('/profile','UserprofileController@show')->name('userprofile.show');
+	Route::get('/profile/{id}/edit','UserprofileController@edit')->name('userprofile.edit');
+	Route::put('/profile/{id}','UserprofileController@update')->name('userprofile.update');
+	
+	Route::get('/order','OrderController@index')->name('order.index');
+
+	Route::get('/order/{id}','OrderController@show')->name('order.show');
+
+	//Route::get('/order/create','OrderController@create')->name('order.create');
 });
 
 Route::get('/home', 'HomeController@index')->name('home.index');

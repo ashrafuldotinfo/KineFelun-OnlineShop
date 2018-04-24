@@ -42,7 +42,7 @@
                     @endif
                     @if(session('user')->type=='user')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('cart.index')}}">Profile</a>
+                            <a class="nav-link" href="{{route('userprofile.show')}}">Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/logout">Log out</a>
