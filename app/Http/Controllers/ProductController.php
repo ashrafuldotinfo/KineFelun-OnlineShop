@@ -27,7 +27,7 @@ class ProductController extends Controller
             $orders = DB::table('orders')
                     ->where('id', session('user')->id)
                     ->get();
-
+                    
             return view('userprofile.index', ['orders' => $orders]);
         }
         else

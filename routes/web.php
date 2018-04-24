@@ -16,7 +16,7 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Route::group(['middleware' => ['sess']], function(){
+Route::group(['middleware' => ['Adminsess']], function(){
 
 	Route::get('/admin', 'AdminController@index')->name('admin.index');
 
@@ -39,6 +39,9 @@ Route::group(['middleware' => ['sess']], function(){
 	Route::post('/product/search', 'ProductController@search');
 	Route::put('/product/{id}', 'ProductController@update');
 	Route::delete('/product/{id}', 'ProductController@destroy');
+});
+
+Route::group(['middleware' => ['sess']], function(){
 
 	Route::get('/profile','UserprofileController@show')->name('userprofile.show');
 	Route::get('/profile/{id}/edit','UserprofileController@edit')->name('userprofile.edit');

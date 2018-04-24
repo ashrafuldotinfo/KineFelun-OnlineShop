@@ -49,7 +49,7 @@
                                                                 	@foreach($cartProducts as $product)
                                                                 		<li>{{$product->name}} ({{$product->qty}})</li>
                                                                 		<?php 
-												                            $total=$total+($product->subtotal*$product->qty);
+												                            $total=$total+($product->subtotal);
 												                         ?>
                                                                 	@endforeach
                                                                 </ul>

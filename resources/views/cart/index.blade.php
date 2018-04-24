@@ -18,6 +18,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('home.index')}}">Home</a>
                 </li>
+                @if(session('user'))
                 @if(session('user')->type=='admin')
                 <li class="nav-item">
                     <a class="nav-link" href="/category">Categories</a>
@@ -25,6 +26,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/product">Product</a>
                 </li>
+                @endif
                 @endif
                 <li class="nav-item active">
                     <a class="nav-link" href="/cart">Cart <span class="sr-only">(current)</span></a>
@@ -115,7 +117,7 @@
                             <td class="text-right"><a href="{{ url('/delete-cart/'.$cp->rowId)}}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> </td>
                         </tr>
                         <?php 
-                            $total=$total+($cp->subtotal*$cp->qty);
+                            $total=$total+($cp->subtotal);
                          ?>
                          @endforeach 
                         
@@ -125,7 +127,7 @@
                             <td></td>
                             <td></td>
                             <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>{{$total}}€</strong></td>
+                            <td class="text-right"><strong>$ {{$total}}</strong></td>
                         </tr>
                     </tbody>
                 </table>

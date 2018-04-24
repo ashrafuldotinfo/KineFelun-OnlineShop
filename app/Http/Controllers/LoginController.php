@@ -9,7 +9,17 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login.index');
+        if(session('user'))
+        {
+            if(session('user')->type=='admin')
+            {
+                return redirect()->route('admin.index');
+            }else{
+                return redirect()->route('userprofile.show');
+            }
+        }else{
+            return view('login.index');
+        }
     }
 
     public function verify(Request $request)
@@ -32,6 +42,7 @@ class LoginController extends Controller
             if($user->type=='admin')
             {
                 $request->session()->put('user', $user);
+                $request->session()->put('admin', $user);
                 // session('user', $user);
                 return redirect()->route('admin.index');
             }
