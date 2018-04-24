@@ -18,12 +18,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('home.index')}}">Home</a>
                 </li>
+                @if(session('user')->type=='admin')
                 <li class="nav-item active">
                     <a class="nav-link" href="{{route('category.index')}}">Categories <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('product.index')}}">Product</a>
                 </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('cart.index')}}">Cart</a>
                 </li>

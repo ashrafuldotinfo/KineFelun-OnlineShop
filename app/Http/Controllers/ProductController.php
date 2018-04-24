@@ -12,6 +12,7 @@ class ProductController extends Controller
 {
     public function index()
     {
+        if(session('user')->type=='admin'){
     	$products = Product::all();
     	//$products->load('category');
     	// $products = DB::table('products')
@@ -20,6 +21,19 @@ class ProductController extends Controller
 
     	//dd($products);
     	return view('product.index', ['products' => $products]);
+        }
+        if(session('user')->type=='user')
+        {
+            $orders = DB::table('orders')
+                    ->where('id', session('user')->id)
+                    ->get();
+
+            return view('userprofile.index', ['orders' => $orders]);
+        }
+        else
+        {
+            return redirect('/login');
+        }
     }
 
     public function show($id)

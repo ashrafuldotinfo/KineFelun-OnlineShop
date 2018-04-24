@@ -14,7 +14,6 @@ class CartController extends Controller
     {
         $cartProducts=Cart::Content();
         return view('cart.index',['cartProducts'=> $cartProducts]);
- 
     }
 
     public function add(Request $request)
