@@ -64,7 +64,7 @@
 	                        <th>Product name</th>
 	                        <th>Price</th>
 	                        <th>Quantity</th>
-	                        <th>Catagory Name</th>
+	                        <!-- <th>Catagory Name</th> -->
 	                        <th>Product Image</th>
 	                        <th>Description</th>
 	                    </tr> 
@@ -81,8 +81,7 @@
 	                            <td>{{$product->productName}}</td>
 	                            <td>{{$product->price}} $</td>
 	                            <td>{{$product->quantity}}</td>
-	                            <td>{{$product->category->categoryName}}</td>
-	                            <td><img src="{{$product->image}}" style="height: 20%; width: 20%;"></td>
+	                            <td style="width: 20%;"><img src="https://static.acer.com/up/Resource/Acer/Home/Product_Highlights/20180112/swift_5.png" style="height: 20%; width: 20%;"></td>
 	                            <td width="20%">{{$product->description}}</td>
 	                          </tr>
 	                    @endforeach

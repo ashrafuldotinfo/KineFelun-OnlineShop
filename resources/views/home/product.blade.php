@@ -20,10 +20,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/category">Categories</a>
                 </li>
+                @if(session('user'))
                 @if(session('user')->type=='admin')
                 <li class="nav-item active">
                     <a class="nav-link" href="/product">Product <span class="sr-only">(current)</span></a>
                 </li>
+                @endif
                 @endif
                 <li class="nav-item">
                     <a class="nav-link" href="/cart">Cart</a>

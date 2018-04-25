@@ -13,11 +13,15 @@ class UserprofileController extends Controller
     {
     	if($request->session()->has('user'))
     	{
+            if(session('user')->type=='user'){
             $orders = DB::table('orders')
                     ->where('id', session('user')->id)
                     ->get();
 
     		return view('userprofile.index', ['orders' => $orders]);
+        }else{
+            return redirect('/admin');
+        }
     			
     	}
     	else
