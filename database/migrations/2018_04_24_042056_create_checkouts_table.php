@@ -17,7 +17,7 @@ class CreateCheckoutsTable extends Migration
             $table->increments('id');
             $table->integer('productId');
             $table->integer('orderId');
-            $table->integer('gn');
+            $table->integer('qn');
         });
     }
 
