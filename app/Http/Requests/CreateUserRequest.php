@@ -24,10 +24,10 @@ class CreateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'username': 'alpha|max:100',
-            'email': 'email',
-            'password': 'required|max:100',
-            'passwordConfirmation': 'required|max:100'
+            'username' => 'alpha|max:100',
+            'email' => 'email',
+            'password' => 'required|max:100',
+            'passwordConfirmation' => 'required|max:100'
         ];
     }
 
